@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Random</title>
+
+    <!-- import bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <!-- import AnimateCSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Import i18n -->
+    <script src="https://unpkg.com/i18next/i18next.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend/i18nextHttpBackend.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+
+    <!-- import Pokemon.CSS -->
+    <link rel="stylesheet" href="./pokemon.css" />
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="headerApp row justify-content-md-end p-3">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xxl-3 text-left">
+                <H4><span data-translate="app-name"></span></H4>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2  col-lg-2 col-xl-2 col-xxl-2 text-end">
+                <div class="form-check form-switch  form-check-reverse">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                        onclick="changeRandom()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Random</label>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2  col-lg-2 col-xl-2 col-xxl-2 text-end">
+                <div class="form-check form-switch  form-check-reverse">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                        onclick="changeAutomatic()">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Automatic</label>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-1 text-end">
+                <select id="languageSelect" class="form-select text-start" aria-label="Default select example"
+                    onchange="changeLanguage(this)">
+                    <option value="en-US">EN</option>
+                    <option value="es-ES">ES</option>
+                    <option value="it-IT">IT</option>
+                    <option selected value="pt-BR">PT</option>
+                </select>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-6 col-xxl-4 text-end">
+                <button id="getNewPokemonBtn" class="btn btn-primary" onclick="loadNewPokemon()"><i
+                        class="bi bi-cloud-arrow-down-fill"></i>&nbsp;Get&nbsp;Pokemon</button>
+                <button class="btn btn-outline-secondary" onclick="sortPokemons()"><i
+                        class="bi bi-sort-numeric-down"></i>&nbsp;Sort&nbsp;by&nbsp;ID</button>
+                <button class="btn btn-outline-danger" onclick="clearPokemons()"><i
+                        class="bi bi-trash"></i>&nbsp;Clear&nbsp;Storage</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">&nbsp;</div>
+        </div>
+        <div id="rowPokemons" class="row">
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+        </div>
+    </div>
+    <script src="js/pokemon.i18n.js"></script>
+    <script src="js/pokemon.storage.js"></script>
+    <script src="js/pokemon.speech.js"></script>
+    <script src="js/pokemon.apiHandler.js"></script>
+    <script src="js/pokemon.actionsInterface.js"></script>
+    <script src="js/pokemon.main.js"></script>
+</body>
+
+</html>
