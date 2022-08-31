@@ -33,7 +33,7 @@ Uma aplicação para carregar e exibir Pokemons, apresentando o seu nome, tipos 
   - [Javascript: Storage](https://developer.mozilla.org/pt-BR/docs/Web/API/Storage)
 - Style Guides
   - [Google Style Guides](https://google.github.io/styleguide/)
-  - [Google Style Guides]()
+  - [AirBnB Style Guide](https://github.com/airbnb/javascript)
 - VS Code Plugins / Tools
   - [ESLint](https://eslint.org/)
   - [ESLint - VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
